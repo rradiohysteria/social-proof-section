@@ -22,6 +22,12 @@ body {
         background-size: auto, cover;
         background-position: top 0vh left 0vw, bottom -50vh right 0vw;
     }
+
+    @media screen and (min-width: $breakpoint-laptop) {
+        background-image: url(../images/bg-pattern-top-desktop.svg), url(../images/bg-pattern-bottom-desktop.svg);
+        background-size: auto, contain;
+        background-position:  top 0vh left 0vw, bottom -10vh right 0vw;
+    }
 }
 
 main {
@@ -33,8 +39,9 @@ main {
 
     @media screen and (min-width: $breakpoint-laptop) {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 40% 60%;
         grid-template-rows: 1fr 1fr;
+        margin: 7.25rem 10rem;
     }
 }
 
@@ -55,5 +62,13 @@ main {
     &__text {
         @include header-text;
         color: $purple-300;
+    }
+
+    @media screen and (min-width: $breakpoint-laptop) {
+        text-align: left;
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row: 1;
+        margin-bottom: $spacing-200;
     }
 }

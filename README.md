@@ -12,13 +12,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./preview.png)
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub](https://github.com/rradiohysteria/social-proof-section)
+- Live Site URL: [GitHub Pages](https://rradiohysteria.github.io/social-proof-section/)
 
 ## My process
 
@@ -28,4 +28,9 @@ Users should be able to:
 - SASS
 - CSS custom properties
 - Flexbox
+- CSS Grid
 - Mobile-first workflow
+
+## Notes
+
+The elements in the `.reviews` container are offset using the `align-self` property. While in a CSS grid, an item has both `align-self` and `justify-self`, Flexbox only allows horizontal alignment. This is why in the `.testimonials` section, we have to use the `transform: translateY()` declaration.
