@@ -1,1 +1,59 @@
 @use 'variables' as *;
+@use 'mixins' as *;
+@use 'components/reviews';
+@use 'components/testimonials';
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    @include flex-center;
+    min-height: 100vh;
+    font-family: "League Spartan", sans-serif;
+    background-image: url(../images/bg-pattern-top-mobile.svg), url(../images/bg-pattern-bottom-mobile.svg);
+    background-position: top 0vh left 0vw, bottom 0vh right 0vw;
+    background-repeat: no-repeat;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+        background-size: auto, cover;
+        background-position: top 0vh left 0vw, bottom -50vh right 0vw;
+    }
+}
+
+main {
+    @include flex-center;
+    flex-direction: column;
+    gap: $spacing-400;
+    width: 90%;
+    margin: 5rem auto;
+
+    @media screen and (min-width: $breakpoint-laptop) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+.header {
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 1;
+
+    &__title {
+        @include header-title;
+        & {
+            color: $purple-900;
+            margin-bottom: $spacing-200;
+        }
+    }
+
+    &__text {
+        @include header-text;
+        color: $purple-300;
+    }
+}

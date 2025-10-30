@@ -1,0 +1,49 @@
+@use '../mixins' as *;
+@use '../variables' as *;
+
+.testimonials {
+    @include flex-column;
+    gap: $spacing-200;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 2;
+
+    &__item {
+        border-radius: 0.5rem;
+        background-color: $purple-900;
+        color: $white;
+        padding: $spacing-400;
+        @include flex-column;
+        gap: $spacing-400;
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+        gap: $spacing-300;
+
+        img {
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    }
+
+    &__name {
+        @include text;
+        font-weight: 700;
+    }
+
+    &__verified {
+        @include text;
+        font-weight: 400;
+        color: $pink-400;
+    }
+
+    &__text {
+        @include text;
+        font-weight: 500;
+        line-height: 1.3;
+        letter-spacing: -0.3px;
+    }
+}
